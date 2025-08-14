@@ -1,141 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Build your backend team with Lodestar - seamless scaling solutions.">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Lodestar - Build Your Backend Team</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII=" type="image/x-icon"> <!-- Minimal placeholder favicon -->
+    <!-- Added some internal CSS as a starting point; client wanted a quick preview today, 14th Aug 2025 -->
+    <style>
+        /* Quick reset I threw together based on what I learned from older projects - keeps things consistent */
+        html, body, div, span, h1, h2, h3, h4, h5, h6, p, ul, li, a, form, input, button, header, nav, main, section, aside, footer, img, figure, figcaption {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            vertical-align: baseline;
+            box-sizing: border-box; /* Makes layout easier, learned this trick last year */
+        }
+        article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+            display: block; /* For older browsers, just in case client uses something ancient */
+        }
+        body {
+            font-family: Arial, Verdana, sans-serif; /* Stuck with system fonts since client hasn’t sent logo fonts yet */
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f8f8;
+        }
+        a {
+            text-decoration: none; /* Removed underlines - client said it looked too formal */
+            color: inherit;
+        }
+        img {
+            max-width: 100%; /* Keeps images from breaking the layout on mobile */
+            height: auto;
+            display: block;
+        }
+        /* More styles to come after client meeting at 11 AM today */
+    </style>
 </head>
 <body>
-    <header class="header">
-        <div class="logo">🌟</div>
-        <nav class="nav">
+    <!-- Added this skip link after realizing keyboard users might struggle - good catch during testing! -->
+    <a href="#main" class="skip-link">Skip to content</a>
+    <header class="sticky-header">
+        <div class="logo">
+            <!-- Using a star char for now; client promised a real logo by end of week -->
+            <span class="star-icon">&#9733;</span> Lodestar
+        </div>
+        <nav class="main-nav">
             <ul>
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#stories">Stories</a></li>
                 <li><a href="#team">Our Team</a></li>
             </ul>
-            <button class="contact-btn" aria-label="Contact Us">Contact</button>
         </nav>
+        <a href="#contact" class="button contact-button">Contact Us</a>
     </header>
 
-    <section class="hero">
-        <p class="subtitle">Let’s Scale Without Hiring Headaches →</p>
-        <h1>BUILD YOUR BACKEND <br><span>TEAM 👥</span> TODAY</h1>
-        <form class="hero-form" aria-label="Book a Call">
-            <input type="email" placeholder="Your email address" aria-label="Email address" required>
-            <button class="book-call" type="submit">Book a Call →</button>
-        </form>
-        <div class="video-section">
-            <!-- Position for Image: Video thumbnail placeholder -->
+    <main id="main">
+        <section class="hero-section">
+            <p class="subtitle">Let’s Scale Without Hiring Headaches &rarr;</p>
+            <h1>BUILD YOUR BACKEND TEAM <br> TODAY</h1>
+            <div class="email-signup">
+                <!-- Added label after accessibility review; hiding it for now per design choice -->
+                <label for="email-call" class="visually-hidden">Enter your email for a call</label>
+                <input type="email" id="email-call" placeholder="Enter your email" aria-label="Enter your email for a call" required>
+                <button type="submit" class="button">Book a Call</button>
+            </div>
             <div class="video-placeholder">
-                <div class="play-button">▶</div>
+                <div class="play-overlay" aria-label="Play video"></div>
+                <p class="caption">See how we made that happen in this short video</p>
+                <!-- Video placeholder; client uploading real footage later today -->
             </div>
-            <p class="video-caption">See how we made that happen <br>in this short video.</p>
-        </div>
-    </section>
+        </section>
 
-    <section class="clients">
-        <div class="client-logo">/ Sisyphus</div>
-        <div class="client-logo">★ Acme Corp</div>
-        <div class="client-logo">○ Nietzsche</div>
-        <div class="client-logo">○ FocalPoint</div>
-        <div class="client-logo">○ Biosynthesis</div>
-    </section>
+        <section class="client-logos">
+            <!-- Swapped images for placeholders since client logos aren’t ready yet -->
+            <div class="logo-placeholder" aria-label="Sisyphus Logo"></div>
+            <div class="logo-placeholder" aria-label="Acme Corp Logo"></div>
+            <div class="logo-placeholder" aria-label="Nietzsche Logo"></div>
+            <div class="logo-placeholder" aria-label="FocalPoint Logo"></div>
+            <div class="logo-placeholder" aria-label="Biosynthesis Logo"></div>
+        </section>
 
-    <section class="different" id="services">
-        <h2>WHAT MAKES US <br><span>DIFFERENT</span></h2>
-        <p class="different-subtitle">From deep onboarding to automation coaching, we embed<br>into your business to help you delegate smarter.</p>
-        <div class="cards">
-            <div class="card">
-                <div class="icon" aria-hidden="true">🌟</div>
-                <h3>Custom VA Training</h3>
-                <p>40+ hours of onboarding tailored to your business needs based on systems & tools.</p>
+        <section class="what-makes-us-different">
+            <h2>What Makes Us Different</h2>
+            <div class="cards-container">
+                <div class="card">
+                    <h3>Custom VA Training</h3>
+                    <p>Tailored virtual assistant training to fit your unique business needs.</p>
+                </div>
+                <div class="card">
+                    <h3>Growth Success Manager</h3>
+                    <p>Dedicated manager to ensure your team's ongoing growth and success.</p>
+                </div>
+                <div class="card">
+                    <h3>Strategic Ops Coaching</h3>
+                    <p>Expert coaching to optimize your operational strategies.</p>
+                </div>
+                <div class="card">
+                    <h3>Automation Integration</h3>
+                    <p>Seamless integration of automation tools for maximum efficiency.</p>
+                </div>
             </div>
-            <div class="card">
-                <div class="icon" aria-hidden="true">📈</div>
-                <h3>Growth Success Manager</h3>
-                <p>Onboarded product workflows, tracking & coaching your VA.</p>
-            </div>
-            <div class="card">
-                <div class="icon" aria-hidden="true">⚙️</div>
-                <h3>Strategic Ops Coaching</h3>
-                <p>Systems thinking, delegation roadmap to remove bottlenecks.</p>
-            </div>
-            <div class="card">
-                <div class="icon" aria-hidden="true">🤖</div>
-                <h3>Automation Integration</h3>
-                <p>Analyze & integrate your systems with AI—no extra charge.</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="help-scale" id="about">
-        <h2>HERE'S HOW WE HELP<br><span>YOU SCALE SMARTER</span></h2>
-        <div class="steps-container">
-            <div class="team-sidebar">
-                <!-- Position for Images: Team member photos -->
-                <div class="team-member top">
-                    <div class="team-img-placeholder" aria-label="Brian's photo"></div>
-                    <div class="info">
-                        <p>Brian</p>
-                        <p>United States</p>
+        <section role="region" aria-labelledby="process-title" class="how-we-help">
+            <h2 id="process-title">How We Help You Scale Smarter</h2>
+            <div class="process-and-team">
+                <div class="three-step-process">
+                    <div class="step">
+                        <h3>1. Source</h3>
+                        <p>We find the perfect talent for your backend needs.</p>
+                    </div>
+                    <div class="step">
+                        <h3>2. Train</h3>
+                        <p>Our comprehensive training prepares them for immediate impact.</p>
+                    </div>
+                    <div class="step">
+                        <h3>3. Scale</h3>
+                        <p>Seamlessly integrate and grow your team with our ongoing support.</p>
                     </div>
                 </div>
-                <div class="team-member">
-                    <div class="team-img-placeholder" aria-label="Vera Blue's photo"></div>
-                    <div class="info">
-                        <p>Global Talent</p>
-                        <p>Vera Blue</p>
-                        <p>23:41 Virtual Assistant</p>
-                    </div>
-                </div>
-                <div class="team-member">
-                    <div class="team-img-placeholder" aria-label="Peter Parker's photo"></div>
-                    <div class="info">
-                        <p>Peter Parker</p>
-                        <p>England Virtual Assistant</p>
-                    </div>
-                </div>
-                <div class="team-member">
-                    <div class="team-img-placeholder" aria-label="Sabina Dichter's photo"></div>
-                    <div class="info">
-                        <p>Sabina Dichter</p>
-                        <p>United States Partner</p>
-                    </div>
-                </div>
+                <aside class="team-sidebar">
+                    <h3>Meet Our Team Leads:</h3>
+                    <ul>
+                        <li>Brian</li>
+                        <li>Vera Blue</li>
+                        <li>Peter Parker</li>
+                        <li>Sabina Dichter</li>
+                    </ul>
+                </aside>
             </div>
-            <div class="steps">
-                <div class="step">
-                    <h3>Step 1</h3>
-                    <p>Source</p>
-                    <p>Your global talent & ensure a tight fit through targeted interviews.</p>
-                </div>
-                <div class="step">
-                    <h3>Step 2</h3>
-                    <p>Train</p>
-                    <p>VA with 40+ hours of onboarding tailored to your tools & workflows.</p>
-                </div>
-                <div class="step">
-                    <h3>Step 3</h3>
-                    <p>Scale</p>
-                    <p>We integrate AI systems to eliminate your backend support growth.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+            <!-- Planning to add team photos after the 2 PM client call -->
+        </section>
+    </main>
 
-    <footer class="footer" id="team">
-        <h2>STOP MANAGING.<br><span>START SCALING.</span></h2>
-        <form class="footer-form" aria-label="Subscribe">
-            <input type="email" placeholder="Your email address" aria-label="Email address" required>
-            <button class="sign-up" type="submit">Sign Up</button>
+    <footer class="site-footer">
+        <h2>STOP MANAGING. START SCALING.</h2>
+        <form class="subscription-form" action="#" method="post">
+            <label for="email-subscribe" class="visually-hidden">Your email address for subscription</label>
+            <input type="email" id="email-subscribe" placeholder="Your email address" aria-label="Your email address for subscription" required>
+            <button type="submit" class="button">Subscribe</button>
         </form>
+        <!-- Might add social links later based on client feedback -->
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
