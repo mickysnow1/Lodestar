@@ -1,456 +1,404 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    /* Fallback font if Inter fails to load */
-    background: linear-gradient(180deg, #f0f9ff 0%, #dbeafe 100%);
-    color: #1e293b;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     line-height: 1.6;
-    overflow-x: hidden;
+    color: #333;
+    background-color: #f8f8f8;
+    padding-top: 70px; /* Added this after noticing content hiding under header */
 }
-
-/* Ensure Inter font is loaded via Google Fonts or local file if needed */
-/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap'); */
-
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 15px;
-    margin: 20px auto;
-    max-width: 1200px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+h1, h2, h3, h4, h5, h6 {
+    font-family: inherit;
+    font-weight: bold; /* Keeping headings bold - client liked the emphasis */
+    margin-bottom: 0.5em;
 }
-
-.logo {
-    font-size: 28px;
-    color: #3b82f6;
-}
-
-.nav ul {
-    display: flex;
-    list-style: none;
-    gap: 30px;
-}
-
-.nav ul li a {
+.button {
+    display: inline-block;
+    padding: 0.8em 1.5em;
+    border-radius: 5px;
+    color: #fff;
+    text-align: center;
     text-decoration: none;
-    color: #64748b;
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-.nav ul li a:hover {
-    color: #3b82f6;
-}
-
-.contact-btn {
-    background: linear-gradient(90deg, #3b82f6, #60a5fa);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 25px;
     cursor: pointer;
-    font-weight: 600;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: background 0.3s ease; /* Changed this after testing hover effect */
+    -webkit-transition: background 0.3s ease; /* Added for older browsers */
+    -moz-transition: background 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Added border after client said buttons looked flat */
+    background: linear-gradient(45deg, #007bff, #0056b3);
 }
-
-.contact-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+.button:hover {
+    background: linear-gradient(45deg, #0056b3, #007bff);
 }
-
-.hero {
-    text-align: center;
-    padding: 60px 20px 40px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.subtitle {
-    font-size: 18px;
-    color: #64748b;
-    margin-bottom: 15px;
-    font-weight: 500;
-}
-
-h1 {
-    font-size: 64px;
-    line-height: 1.1;
-    margin-bottom: 30px;
-    color: #1e293b;
-}
-
-h1 span {
-    color: #3b82f6;
-}
-
-.hero-form {
-    display: flex;
-    justify-content: center;
-    gap: 0;
-    margin-bottom: 40px;
-}
-
-.hero-form input {
-    padding: 15px 20px;
-    border-radius: 25px 0 0 25px;
-    border: none;
-    width: 300px;
-    background: rgba(255, 255, 255, 0.9);
-    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
-    font-size: 16px;
-    transition: box-shadow 0.3s ease;
-}
-
-.hero-form input:focus {
-    outline: none;
-    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1), 0 0 0 3px rgba(59, 130, 246, 0.2);
-}
-
-.book-call {
-    background: linear-gradient(90deg, #3b82f6, #60a5fa);
-    color: white;
-    border: none;
-    padding: 15px 25px;
-    border-radius: 0 25px 25px 0;
-    cursor: pointer;
-    font-weight: 600;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.book-call:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
-}
-
-.video-section {
-    background: white;
-    border-radius: 30px;
-    max-width: 700px;
-    margin: 0 auto 40px;
-    overflow: hidden;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-
-.video-placeholder {
-    /* Replace 'placeholder-video.jpg' with actual image path */
-    background: url('placeholder-video.jpg') center/cover no-repeat;
-    height: 400px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.play-button {
-    background: rgba(59, 130, 246, 0.8);
-    color: white;
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 28px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.play-button:hover {
-    transform: scale(1.1);
-}
-
-.video-caption {
-    font-size: 16px;
-    color: #64748b;
-    text-align: center;
-    padding: 15px;
-    font-weight: 500;
-}
-
-.clients {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    padding: 40px 20px;
-    font-size: 18px;
-    color: #9ca3af;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.different {
-    text-align: center;
-    padding: 60px 20px;
-    background: white;
-    max-width: 1200px;
-    margin: 0 auto;
-    border-radius: 30px;
-    box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.05);
-    margin-top: -30px;
-}
-
-h2 {
-    font-size: 48px;
-    line-height: 1.1;
-    margin-bottom: 20px;
-}
-
-h2 span {
-    color: #3b82f6;
-}
-
-.different-subtitle {
-    font-size: 18px;
-    color: #64748b;
-    margin-bottom: 40px;
-    font-weight: 500;
-}
-
-.cards {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.card {
-    background: #f9fafb;
-    border-radius: 20px;
-    padding: 25px;
-    max-width: 240px;
-    text-align: left;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-}
-
-.icon {
-    font-size: 24px;
-    color: #3b82f6;
-    margin-bottom: 15px;
-}
-
-.card h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
-    color: #1e293b;
-}
-
-.card p {
-    font-size: 15px;
-    color: #64748b;
-}
-
-.help-scale {
-    background: linear-gradient(180deg, #dbeafe, #93c5fd);
-    border-radius: 30px 30px 0 0;
-    padding: 60px 20px;
-    text-align: center;
-    max-width: 1200px;
-    margin: 40px auto 0;
-}
-
-.steps-container {
+.sticky-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Added shadow to give it some depth */
+    padding: 1em 5%;
     display: flex;
     justify-content: space-between;
-    gap: 40px;
-    max-width: 1100px;
-    margin: 40px auto 0;
+    align-items: center;
+    z-index: 1000; /* Keeps it on top - tested with overlapping content */
+    min-height: 60px;
 }
-
-.team-sidebar {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 40%;
-    text-align: left;
-}
-
-.team-member {
+.sticky-header .logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #333;
     display: flex;
     align-items: center;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 20px;
-    padding: 15px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-    position: relative;
-    transition: box-shadow 0.3s ease;
 }
-
-.team-member:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+.sticky-header .star-icon {
+    color: #ffd700; /* Chose gold for the star - feels premium */
+    margin-right: 0.2em;
+    font-size: 1.2em;
 }
-
-.team-member img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin-right: 15px;
-    object-fit: cover;
+.main-nav ul {
+    list-style: none;
+    display: flex; /* Went with flex after trying floats - much cleaner */
 }
-
-.info p {
-    font-size: 14px;
-    margin: 0;
+.main-nav li {
+    margin-right: 1.5em;
 }
-
-.info p:first-child {
-    font-weight: 600;
-    color: #1e293b;
+.main-nav a {
+    color: #555;
+    padding: 0.5em 0;
+    transition: color 0.3s ease;
+    -webkit-transition: color 0.3s ease;
+    -moz-transition: color 0.3s ease;
 }
-
-.team-member:not(.top):before {
-    content: '';
-    position: absolute;
-    left: -25px;
-    top: 20px;
-    width: 20px;
-    height: 2px;
-    background: #60a5fa;
+.main-nav a:hover {
+    color: #007bff;
 }
-
-.team-sidebar:after {
-    content: '';
-    position: absolute;
-    left: 20px;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: #60a5fa;
-    opacity: 0.7;
+.contact-button {
+    padding: 0.6em 1.2em; /* Adjusted padding to match design mockup */
 }
-
-.steps {
+.hero-section {
+    background: linear-gradient(135deg, #e0f2f7, #c1e4ed); /* Picked this gradient after playing with colors */
+    padding: 5em 5%;
+    text-align: center;
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    width: 60%;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh; /* Wanted a big hero section - client approved */
 }
-
-.step {
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 20px;
-    padding: 20px;
-    text-align: left;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-    transition: box-shadow 0.3s ease;
-}
-
-.step:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.step h3 {
-    font-size: 18px;
-    margin-bottom: 5px;
-    color: #3b82f6;
-}
-
-.step p {
-    font-size: 16px;
-    margin-bottom: 5px;
+.hero-section .subtitle {
+    font-size: 1.2em;
+    color: #0056b3;
+    margin-bottom: 0.5em;
     font-weight: 600;
-    color: #1e293b;
 }
-
-.step p:last-child {
-    font-size: 14px;
-    color: #64748b;
-    font-weight: 400;
+.hero-section h1 {
+    font-size: 3em;
+    color: #222;
+    margin-bottom: 1em;
+    line-height: 1.2;
 }
-
-.footer {
-    text-align: center;
-    padding: 60px 20px;
-    background: white;
-    border-top-left-radius: 50px;
-    border-top-right-radius: 50px;
-    max-width: 1200px;
-    margin: 0 auto;
-    box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.05);
+.email-signup {
+    display: flex;
+    margin-bottom: 2em;
 }
-
-.footer h2 {
-    font-size: 40px;
-    margin-bottom: 20px;
+.email-signup input[type="email"] {
+    padding: 0.8em 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    width: 250px;
+    max-width: 100%;
 }
-
-.footer h2 span {
-    color: #3b82f6;
+.email-signup button {
+    border-radius: 0 5px 5px 0;
 }
-
-.footer-form {
+.video-placeholder {
+    width: 80%;
+    max-width: 600px;
+    height: 0;
+    padding-bottom: 45%; /* Set 16:9 ratio after watching some video tutorials */
+    background-color: #333;
+    background-image: linear-gradient(45deg, #333, #444); /* Swapped image for gradient since file’s not ready */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+}
+.video-placeholder .play-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
     display: flex;
     justify-content: center;
-    gap: 0;
-    margin-bottom: 20px;
+    align-items: center;
 }
-
-.footer-form input {
-    padding: 15px 20px;
-    border-radius: 25px 0 0 25px;
-    border: none;
-    width: 300px;
-    background: rgba(255, 255, 255, 0.9);
-    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
-    font-size: 16px;
+.video-placeholder .play-overlay::after {
+    content: '▶';
+    font-size: 3em;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    padding: 0.5em 0.7em;
+    background-color: rgba(0,0,0,0.3);
 }
-
-.footer-form input:focus {
+.video-placeholder .caption {
+    position: absolute;
+    bottom: 1em;
+    left: 0;
+    width: 100%;
+    color: #eee;
+    font-size: 0.9em;
+    background-color: rgba(0,0,0,0.7);
+    padding: 0.5em 0;
+}
+.client-logos {
+    padding: 3em 5%;
+    text-align: center;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+}
+.client-logos .logo-placeholder {
+    height: 40px;
+    width: auto;
+    background: linear-gradient(45deg, #ccc, #ddd); /* Quick placeholder for logos */
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: opacity 0.3s ease, filter 0.3s ease;
+}
+.client-logos .logo-placeholder:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+.what-makes-us-different {
+    padding: 4em 5%;
+    text-align: center;
+}
+.what-makes-us-different h2 {
+    font-size: 2em;
+    margin-bottom: 2em;
+    color: #007bff;
+}
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2em;
+}
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    padding: 1.5em;
+    width: 100%;
+    max-width: 300px;
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+.card:hover {
+    transform: translateY(-5px); /* Added this lift effect - looks cool! */
+}
+.card h3 {
+    font-size: 1.2em;
+    color: #0056b3;
+    margin-bottom: 0.8em;
+}
+.card p {
+    font-size: 0.95em;
+    color: #666;
+}
+.how-we-help {
+    padding: 4em 5%;
+    background-color: #f0f8ff;
+    overflow: auto;
+}
+.how-we-help h2 {
+    font-size: 2em;
+    color: #007bff;
+    text-align: center;
+    margin-bottom: 2em;
+}
+.process-and-team {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+}
+.three-step-process {
+    flex: 3;
+    min-width: 280px;
+}
+.step {
+    background-color: #fff;
+    border-left: 5px solid #007bff;
+    padding: 1.5em;
+    margin-bottom: 1.5em;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+.step h3 {
+    font-size: 1.3em;
+    color: #0056b3;
+    margin-bottom: 0.5em;
+}
+.team-sidebar {
+    flex: 1;
+    min-width: 200px;
+    background-color: #fff;
+    padding: 1.5em;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+.team-sidebar h3 {
+    color: #007bff;
+    margin-bottom: 1em;
+    font-size: 1.2em;
+    text-align: center;
+}
+.team-sidebar ul {
+    list-style: none;
+}
+.team-sidebar li {
+    padding: 0.5em 0;
+    border-bottom: 1px solid #eee;
+    color: #555;
+}
+.team-sidebar li:last-child {
+    border-bottom: none;
+}
+.site-footer {
+    background-color: #333;
+    color: #fff;
+    padding: 3em 5%;
+    text-align: center;
+}
+.site-footer h2 {
+    font-size: 2.2em;
+    color: #fff;
+    margin-bottom: 1.5em;
+}
+.subscription-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+    margin: 0 auto;
+}
+.subscription-form p {
+    margin-bottom: 1em;
+    font-size: 1.1em;
+}
+.subscription-form input[type="email"] {
+    width: 100%;
+    padding: 0.8em 1em;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background-color: #444;
+    color: #fff;
+    margin-bottom: 1em;
     outline: none;
-    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1), 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+.subscription-form input[type="email"]::placeholder {
+    color: #bbb;
+}
+.subscription-form button {
+    width: 100%;
 }
 
-.sign-up {
-    background: linear-gradient(90deg, #3b82f6, #60a5fa);
-    color: white;
-    border: none;
-    padding: 15px 25px;
-    border-radius: 0 25px 25px 0;
-    cursor: pointer;
-    font-weight: 600;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+/* Tablet (Portrait) - Adjusted after testing on iPad */
+@media screen and (min-width: 768px) {
+    .sticky-header {
+        padding: 1em 3%;
+    }
+    .hero-section h1 {
+        font-size: 4em;
+    }
+    .email-signup input[type="email"] {
+        width: 300px;
+    }
+    .email-signup button {
+        width: auto;
+    }
+    .cards-container {
+        justify-content: space-between;
+        gap: 1.5em;
+    }
+    .card {
+        width: calc(50% - 0.75em);
+    }
+    .process-and-team {
+        flex-direction: row;
+        gap: 3em;
+    }
+    .three-step-process {
+        flex: 3;
+    }
+    .team-sidebar {
+        flex: 1;
+    }
 }
 
-.sign-up:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+/* Desktop - Tweaked after seeing it on a 27" monitor */
+@media screen and (min-width: 1024px) {
+    .sticky-header {
+        padding: 1em 5%;
+    }
+    .hero-section h1 {
+        font-size: 5em;
+    }
+    .cards-container {
+        gap: 2em;
+    }
+    .card {
+        width: calc(25% - 1.5em);
+    }
+    .process-and-team {
+        gap: 5em;
+    }
 }
 
-@media (max-width: 768px) {
-    .header {
-        flex-direction: column;
-        gap: 15px;
+/* Very large screens - Capped width after client wanted less sprawl */
+@media screen and (min-width: 1400px) {
+    main {
+        max-width: 1400px;
+        margin: 0 auto;
     }
-    .nav ul {
-        flex-direction: column;
-        gap: 15px;
+    .sticky-header {
+        max-width: 1400px;
+        margin: 0 auto;
     }
-    .hero h1 {
-        font-size: 48px;
+    .hero-section, .client-logos, .what-makes-us-different, .how-we-help, .site-footer {
+        padding-left: calc(50% - 700px);
+        padding-right: calc(50% - 700px);
     }
-    .hero-form input, .footer-form input {
-        width: 200px;
+    .sticky-header {
+        padding-left: calc(50% - 700px);
+        padding-right: calc(50% - 700px);
     }
-    .steps-container {
-        flex-direction: column;
-        gap: 30px;
+    .sticky-header .main-nav {
+        flex-grow: 1;
+        justify-content: center;
     }
-    .team-sidebar, .steps {
-        width: 100%;
-    }
+}
+
+/* Added this breakpoint after noticing cards looked cramped on tablets */
+@media screen and (min-width: 600px) {
+    .card { width: 45%; }
+}
+
+/* Hidden class for accessibility labels - worked this out after a quick Google */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
 }
