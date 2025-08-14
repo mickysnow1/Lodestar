@@ -6,11 +6,15 @@
 
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    /* Fallback font if Inter fails to load */
     background: linear-gradient(180deg, #f0f9ff 0%, #dbeafe 100%);
     color: #1e293b;
     line-height: 1.6;
     overflow-x: hidden;
 }
+
+/* Ensure Inter font is loaded via Google Fonts or local file if needed */
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap'); */
 
 .header {
     display: flex;
@@ -139,7 +143,8 @@ h1 span {
 }
 
 .video-placeholder {
-    background: url('placeholder-video.jpg') center/cover; /* Replace with actual image */
+    /* Replace 'placeholder-video.jpg' with actual image path */
+    background: url('placeholder-video.jpg') center/cover no-repeat;
     height: 400px;
     position: relative;
     display: flex;
