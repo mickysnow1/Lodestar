@@ -3,29 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Build your backend team with Lodestar - seamless scaling solutions.">
     <title>Lodestar - Build Your Backend Team</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
     <header class="header">
         <div class="logo">🌟</div>
         <nav class="nav">
             <ul>
-                <li>About</li>
-                <li>Services</li>
-                <li>Stories</li>
-                <li>Our Team</li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#stories">Stories</a></li>
+                <li><a href="#team">Our Team</a></li>
             </ul>
-            <button class="contact-btn">Contact Us</button>
+            <button class="contact-btn" aria-label="Contact Us">Contact</button>
         </nav>
     </header>
 
     <section class="hero">
         <p class="subtitle">Let’s Scale Without Hiring Headaches →</p>
-        <h1>BUILD YOUR BACKEND <br>TEAM 👥 TODAY</h1>
-        <form class="hero-form">
-            <input type="email" placeholder="Your email address">
-            <button class="book-call">Book a Call →</button>
+        <h1>BUILD YOUR BACKEND <br><span>TEAM 👥</span> TODAY</h1>
+        <form class="hero-form" aria-label="Book a Call">
+            <input type="email" placeholder="Your email address" aria-label="Email address" required>
+            <button class="book-call" type="submit">Book a Call →</button>
         </form>
         <div class="video-section">
             <!-- Position for Image: Video thumbnail image -->
@@ -44,35 +46,35 @@
         <div class="client-logo">○ Biosynthesis</div>
     </section>
 
-    <section class="different">
-        <h2>WHAT MAKES US <br>DIFFERENT</h2>
-        <p class="different-subtitle">From deep onboarding to automation coaching we embed<br>into your business to help you delegate smarter.</p>
+    <section class="different" id="services">
+        <h2>WHAT MAKES US <br><span>DIFFERENT</span></h2>
+        <p class="different-subtitle">From deep onboarding to automation coaching, we embed<br>into your business to help you delegate smarter.</p>
         <div class="cards">
             <div class="card">
-                <div class="icon"></div>
+                <div class="icon" aria-hidden="true">🌟</div>
                 <h3>Custom VA Training</h3>
-                <p>40+ hours of onboarding tailored to your business needs based on your systems & tools.</p>
+                <p>40+ hours of onboarding tailored to your business needs based on systems & tools.</p>
             </div>
             <div class="card">
-                <div class="icon"></div>
+                <div class="icon" aria-hidden="true">📈</div>
                 <h3>Growth Success Manager</h3>
                 <p>Onboarded product workflows, tracking & coaching your VA.</p>
             </div>
             <div class="card">
-                <div class="icon"></div>
+                <div class="icon" aria-hidden="true">⚙️</div>
                 <h3>Strategic Ops Coaching</h3>
                 <p>Systems thinking, delegation roadmap to remove bottlenecks.</p>
             </div>
             <div class="card">
-                <div class="icon"></div>
+                <div class="icon" aria-hidden="true">🤖</div>
                 <h3>Automation Integration</h3>
                 <p>Analyze & integrate your systems with AI—no extra charge.</p>
             </div>
         </div>
     </section>
 
-    <section class="help-scale">
-        <h2>HERE'S HOW WE HELP<br>YOU SCALE SMARTER</h2>
+    <section class="help-scale" id="about">
+        <h2>HERE'S HOW WE HELP<br><span>YOU SCALE SMARTER</span></h2>
         <div class="steps-container">
             <div class="team-sidebar">
                 <!-- Position for Images: Team member photos -->
@@ -88,7 +90,7 @@
                     <div class="info">
                         <p>Global Talent</p>
                         <p>Vera Blue</p>
-                        <p>23.41 Virtual Assistant</p>
+                        <p>23:41 Virtual Assistant</p>
                     </div>
                 </div>
                 <div class="team-member">
@@ -126,10 +128,13 @@
         </div>
     </section>
 
-    <section class="ways-help">
-        <h2>5 WAYS WE HELP YOU<br>STAY OUT OF THE WEEDS</h2>
-        <!-- Additional cards or content can be added here if the full image shows more -->
-    </section>
+    <footer class="footer" id="team">
+        <h2>STOP MANAGING.<br><span>START SCALING.</span></h2>
+        <form class="footer-form" aria-label="Subscribe">
+            <input type="email" placeholder="Your email address" aria-label="Email address" required>
+            <button class="sign-up" type="submit">Sign Up</button>
+        </form>
+    </footer>
 
     <script src="script.js"></script>
 </body>
